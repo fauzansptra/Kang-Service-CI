@@ -1,0 +1,21 @@
+# Ignore environment file
+.env
+
+# Ignore system folder (if you don't want to commit the system files)
+system/
+
+# Ignore writable directory (if you don't want to commit logs/uploads)
+writable/
+
+# Ignore composer dependencies
+/vendor/
+
+# Ignore IDE specific files
+*.DS_Store
+*.idea/
+.vscode/
+Thumbs.db
+
+# Ignore any temporary files
+*.tmp
+*.temp
