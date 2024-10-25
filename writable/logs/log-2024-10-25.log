@@ -244,3 +244,53 @@ in APPPATH\Views\layouts\main.php on line 7.
 INFO - 2024-10-25 21:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-10-25 21:02:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-10-25 21:02:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-10-25 21:06:18 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`kangservice`.`servicerequest`, CONSTRAINT `servicerequest_ibfk_2` FOREIGN KEY (`technician_id`) REFERENCES `technician` (`technician_id`)) in C:\xampp\htdocs\Kang Service - CI\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\Kang Service - CI\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `Se...', 0)
+#1 C:\xampp\htdocs\Kang Service - CI\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `Se...')
+#2 C:\xampp\htdocs\Kang Service - CI\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `Se...')
+#3 C:\xampp\htdocs\Kang Service - CI\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `Se...', Array, false)
+#4 C:\xampp\htdocs\Kang Service - CI\app\Database\Seeds\DatabaseSeeder.php(98): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\Kang Service - CI\app\Database\Seeds\DatabaseSeeder.php(14): App\Database\Seeds\DatabaseSeeder->seedServiceRequests()
+#6 C:\xampp\htdocs\Kang Service - CI\system\Database\Seeder.php(147): App\Database\Seeds\DatabaseSeeder->run()
+#7 C:\xampp\htdocs\Kang Service - CI\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#8 C:\xampp\htdocs\Kang Service - CI\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Seed->run(Array)
+#9 C:\xampp\htdocs\Kang Service - CI\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#10 C:\xampp\htdocs\Kang Service - CI\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\Kang Service - CI\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\Kang Service - CI\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2024-10-25 21:08:16 --> mysqli_sql_exception: Cannot truncate a table referenced in a foreign key constraint (`kangservice`.`feedback`, CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`request_id`) REFERENCES `kangservice`.`servicerequest` (`request_id`)) in C:\xampp\htdocs\Kang Service - CI\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\Kang Service - CI\system\Database\MySQLi\Connection.php(312): mysqli->query('TRUNCATE `Servi...', 0)
+#1 C:\xampp\htdocs\Kang Service - CI\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('TRUNCATE `Servi...')
+#2 C:\xampp\htdocs\Kang Service - CI\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('TRUNCATE `Servi...')
+#3 C:\xampp\htdocs\Kang Service - CI\system\Database\BaseBuilder.php(2768): CodeIgniter\Database\BaseConnection->query('TRUNCATE `Servi...', NULL, false)
+#4 C:\xampp\htdocs\Kang Service - CI\app\Database\Seeds\DatabaseSeeder.php(27): CodeIgniter\Database\BaseBuilder->truncate()
+#5 C:\xampp\htdocs\Kang Service - CI\app\Database\Seeds\DatabaseSeeder.php(12): App\Database\Seeds\DatabaseSeeder->truncateTables()
+#6 C:\xampp\htdocs\Kang Service - CI\system\Database\Seeder.php(147): App\Database\Seeds\DatabaseSeeder->run()
+#7 C:\xampp\htdocs\Kang Service - CI\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#8 C:\xampp\htdocs\Kang Service - CI\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Seed->run(Array)
+#9 C:\xampp\htdocs\Kang Service - CI\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#10 C:\xampp\htdocs\Kang Service - CI\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\Kang Service - CI\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\Kang Service - CI\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2024-10-25 21:09:38 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`kangservice`.`servicerequest`, CONSTRAINT `servicerequest_ibfk_2` FOREIGN KEY (`technician_id`) REFERENCES `technician` (`technician_id`)) in C:\xampp\htdocs\Kang Service - CI\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\Kang Service - CI\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `Se...', 0)
+#1 C:\xampp\htdocs\Kang Service - CI\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `Se...')
+#2 C:\xampp\htdocs\Kang Service - CI\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `Se...')
+#3 C:\xampp\htdocs\Kang Service - CI\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `Se...', Array, false)
+#4 C:\xampp\htdocs\Kang Service - CI\app\Database\Seeds\DatabaseSeeder.php(124): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\Kang Service - CI\app\Database\Seeds\DatabaseSeeder.php(20): App\Database\Seeds\DatabaseSeeder->seedServiceRequests()
+#6 C:\xampp\htdocs\Kang Service - CI\system\Database\Seeder.php(147): App\Database\Seeds\DatabaseSeeder->run()
+#7 C:\xampp\htdocs\Kang Service - CI\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#8 C:\xampp\htdocs\Kang Service - CI\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Seed->run(Array)
+#9 C:\xampp\htdocs\Kang Service - CI\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#10 C:\xampp\htdocs\Kang Service - CI\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 C:\xampp\htdocs\Kang Service - CI\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\xampp\htdocs\Kang Service - CI\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+INFO - 2024-10-25 21:11:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-25 21:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
