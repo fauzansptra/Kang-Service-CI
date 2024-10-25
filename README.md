@@ -1,8 +1,10 @@
 # Kang Service
 
 ## How to Contribute
-
-Buka Folder htdocs lewat terminal, clone repository ini, buat branch baru
+<ol>
+<li>Buka Folder htdocs lewat terminal, clone repository ini, buat branch baru </li>
+<li>Buat database baru di xampp dan import file sql di folder public</li>
+</ol>
 
 ## ERD
 
