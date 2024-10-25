@@ -3,46 +3,41 @@
 namespace App\Controllers;
 
 use App\Models\TechnicianModel;
+use App\Models\ServiceRequestModel;
+use CodeIgniter\Controller;
 
-class TechnicianController extends BaseController
+class TechnicianController extends Controller
 {
     protected $technicianModel;
+    protected $serviceRequestModel;
 
     public function __construct()
     {
         $this->technicianModel = new TechnicianModel();
+        $this->serviceRequestModel = new ServiceRequestModel();
     }
 
     public function index()
     {
-        // List all technicians (admin only)
-        $this->checkRole('admin');
-        $data['technicians'] = $this->technicianModel->findAll();
-        return view('technicians/index', $data);
+        $technicians = $this->technicianModel->findAll();
+        return view('technician/index', ['technicians' => $technicians]);
     }
 
-    public function create()
+    public function assign($requestId)
     {
-        if ($this->request->getMethod() === 'post') {
-            $this->technicianModel->save($this->request->getPost());
-            return redirect()->to('/technician');
+        if ($this->request->getMethod() == 'post') {
+            $technicianId = $this->request->getPost('technician_id');
+            $data = [
+                'technician_id' => $technicianId,
+                'status' => 'assigned' // Update status to assigned
+            ];
+
+            $this->serviceRequestModel->update($requestId, $data);
+            return redirect()->to('/service-request')->with('success', 'Service request assigned to technician.');
         }
-        return view('technicians/create');
-    }
 
-    public function update($id)
-    {
-        $technician = $this->technicianModel->find($id);
-        if ($this->request->getMethod() === 'post') {
-            $this->technicianModel->update($id, $this->request->getPost());
-            return redirect()->to('/technician');
-        }
-        return view('technicians/edit', ['technician' => $technician]);
-    }
-
-    public function delete($id)
-    {
-        $this->technicianModel->delete($id);
-        return redirect()->to('/technician');
+        // Fetch technicians for selection
+        $technicians = $this->technicianModel->findAll();
+        return view('technician/assign', ['technicians' => $technicians, 'requestId' => $requestId]);
     }
 }

@@ -38,3 +38,10 @@ $routes->post('service-history/create', 'ServiceHistoryController::create');
 // Feedback routes
 $routes->get('feedback', 'FeedbackController::index');
 $routes->post('feedback/create', 'FeedbackController::create');
+
+// Auth routes
+$routes->get('login', 'AuthController::login'); // Show login form
+$routes->post('login', 'AuthController::login'); // Handle login submission
+$routes->get('register', 'AuthController::register'); // Show registration form
+$routes->post('register', 'AuthController::register'); // Handle registration submission
+$routes->get('logout', 'AuthController::logout'); // Handle logout
