@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Dashboard::index');
 
 // User routes
 $routes->get('user', 'UserController::index');            // List all users
